@@ -1,2 +1,2 @@
 # Database
-Repositório destinado a modelagens e scripts de Banco de Dados
+Repositório destinado a modelagens e scripts de Banco de Dados.
