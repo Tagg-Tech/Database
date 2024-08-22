@@ -32,9 +32,10 @@ CREATE TABLE maquina (
 CREATE TABLE historico (
   idHistorico INT PRIMARY KEY AUTO_INCREMENT,
   momento DATETIME, 
-  velocidadeCpu DOUBLE,
-  consumoMemoria DOUBLE,
-  atividadeDisco DOUBLE,
+  percentualCPU DECIMAL (6,1),
+  usoCPU DECIMAL (5,2),
+  usoMemoria DECIMAL (5,2),
+  usoDisco DECIMAL (5,2),
   fkMaquina INT NOT NULL,
   FOREIGN KEY (fkMaquina) REFERENCES maquina (idMaquina)
 );
