@@ -35,7 +35,6 @@ CREATE TABLE historico (
   velocidadeCpu DOUBLE,
   consumoMemoria DOUBLE,
   atividadeDisco DOUBLE,
-  taxaTransferenciaRede DOUBLE,
   fkMaquina INT NOT NULL,
   FOREIGN KEY (fkMaquina) REFERENCES maquina (idMaquina)
 );
