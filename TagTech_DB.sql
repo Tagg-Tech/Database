@@ -40,6 +40,24 @@ CREATE TABLE historico (
   FOREIGN KEY (fkMaquina) REFERENCES maquina (idMaquina)
 );
 
+CREATE TABLE registros (
+idRegistros INT PRIMARY KEY AUTO_INCREMENT,
+nomeMaquina VARCHAR(45),
+sistemaOperacional VARCHAR(7),
+qtdTotalMemoria INT,
+percentualMemoria DECIMAL (5,2),
+qtdTotalDisco INT,
+qtdUtilizadaDisco INT,
+percentualDisco DECIMAL (5,2),
+qtdNucleosCPU INT,
+qtdNucleosVirtuaisCPU INT,
+percentualCPU DECIMAL (6,2),
+frequenciaCPU DECIMAL (6,2)
+dataHora DATETIME DEFAULT now()
+);
+
+SELECT * FROM registros;
+
 CREATE TABLE usuarioResponsavelMaquina (
   fkUsuario INT NOT NULL,
   fkMaquina INT NOT NULL,
