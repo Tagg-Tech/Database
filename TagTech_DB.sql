@@ -41,22 +41,35 @@ CREATE TABLE historico (
 );
 
 CREATE TABLE registros (
-idRegistros INT PRIMARY KEY AUTO_INCREMENT,
-nomeMaquina VARCHAR(45),
-sistemaOperacional VARCHAR(7),
-qtdTotalMemoria INT,
-percentualMemoria DECIMAL (5,2),
-qtdTotalDisco INT,
-qtdUtilizadaDisco INT,
-percentualDisco DECIMAL (5,2),
-qtdNucleosCPU INT,
-qtdNucleosVirtuaisCPU INT,
-percentualCPU DECIMAL (6,2),
-frequenciaCPU DECIMAL (6,2)
+idRegistro INT PRIMARY KEY AUTO_INCREMENT,
+nomeMaquina VARCHAR(45), 
+sistemaOperacional VARCHAR(7), 
+qtdTotalMemoria BIGINT, 
+percentualMemoria DECIMAL(6,2), 
+qtdTotalDisco BIGINT, 
+qtdUtilizadaDisco BIGINT, 
+percentualDisco DECIMAL(6,2), 
+qtdNucleosCPU INT, 
+qtdNucleosVirtuaisCPU INT, 
+percentualCPU DECIMAL (6,2), 
+frequenciaCPU DECIMAL (6,2), 
+nomeUsuario VARCHAR(45), 
+qtdBateria INT, 
+segundosParaAcabar BIGINT, 
+conectadoEnergia BOOLEAN,
 dataHora DATETIME DEFAULT now()
 );
 
+CREATE TABLE processos (
+idProcessos INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(45)
+);
+
 SELECT * FROM registros;
+
+SELECT * FROM processos;
+SELECT COUNT(*) as qtdNomes, nome FROM processos GROUP BY nome ORDER BY qtdNomes DESC;
+TRUNCATE TABLE processos;
 
 CREATE TABLE usuarioResponsavelMaquina (
   fkUsuario INT NOT NULL,
