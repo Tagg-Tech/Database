@@ -29,17 +29,6 @@ CREATE TABLE maquina (
   FOREIGN KEY (fkEmpresa) REFERENCES empresa (idEmpresa)
 );
 
-CREATE TABLE historico (
-  idHistorico INT PRIMARY KEY AUTO_INCREMENT,
-  momento DATETIME, 
-  percentualCPU DECIMAL (6,1),
-  usoCPU DECIMAL (5,2),
-  usoMemoria DECIMAL (5,2),
-  usoDisco DECIMAL (5,2),
-  fkMaquina INT NOT NULL,
-  FOREIGN KEY (fkMaquina) REFERENCES maquina (idMaquina)
-);
-
 CREATE TABLE registros (
 idRegistro INT PRIMARY KEY AUTO_INCREMENT,
 nomeMaquina VARCHAR(45), 
@@ -54,9 +43,6 @@ qtdNucleosVirtuaisCPU INT,
 percentualCPU DECIMAL (6,2), 
 frequenciaCPU DECIMAL (6,2), 
 nomeUsuario VARCHAR(45), 
-qtdBateria INT, 
-segundosParaAcabar BIGINT, 
-conectadoEnergia BOOLEAN,
 dataHora DATETIME DEFAULT now()
 );
 
