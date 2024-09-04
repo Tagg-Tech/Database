@@ -46,16 +46,7 @@ nomeUsuario VARCHAR(45),
 dataHora DATETIME DEFAULT now()
 );
 
-CREATE TABLE processos (
-idProcessos INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45)
-);
-
 SELECT * FROM registros;
-
-SELECT * FROM processos;
-SELECT COUNT(*) as qtdNomes, nome FROM processos GROUP BY nome ORDER BY qtdNomes DESC;
-TRUNCATE TABLE processos;
 
 CREATE TABLE usuarioResponsavelMaquina (
   fkUsuario INT NOT NULL,
