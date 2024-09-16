@@ -25,24 +25,21 @@ CREATE TABLE maquina (
   idMaquina INT PRIMARY KEY AUTO_INCREMENT,
   nomeMaquina VARCHAR(45),
   sistemaOperacional VARCHAR(45),
+  qtdTotalMemoria BIGINT,
+  qtdTotalDisco BIGINT, 
+  qtdNucleosCPU INT, 
+  qtdNucleosVirtuaisCPU INT, 
   fkEmpresa INT NOT NULL,
   FOREIGN KEY (fkEmpresa) REFERENCES empresa (idEmpresa)
 );
 
 CREATE TABLE registros (
-idRegistro INT PRIMARY KEY AUTO_INCREMENT,
-nomeMaquina VARCHAR(45), 
-sistemaOperacional VARCHAR(7), 
-qtdTotalMemoria BIGINT, 
+idRegistro INT PRIMARY KEY AUTO_INCREMENT, 
 percentualMemoria DECIMAL(6,2), 
-qtdTotalDisco BIGINT, 
 qtdUtilizadaDisco BIGINT, 
 percentualDisco DECIMAL(6,2), 
-qtdNucleosCPU INT, 
-qtdNucleosVirtuaisCPU INT, 
 percentualCPU DECIMAL (6,2), 
-frequenciaCPU DECIMAL (6,2), 
-nomeUsuario VARCHAR(45), 
+frequenciaCPU DECIMAL (6,2),  
 dataHora DATETIME DEFAULT now()
 );
 
