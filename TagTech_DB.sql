@@ -23,12 +23,11 @@ CREATE TABLE usuario (
 
 CREATE TABLE maquina (
   idMaquina INT PRIMARY KEY AUTO_INCREMENT,
-  nomeMaquina VARCHAR(45),
+  placaDeRede BIGINT,
   sistemaOperacional VARCHAR(45),
   qtdTotalMemoria BIGINT,
+  qtdCpu INT,
   qtdTotalDisco BIGINT, 
-  qtdNucleosCPU INT, 
-  qtdNucleosVirtuaisCPU INT, 
   fkEmpresa INT NOT NULL,
   FOREIGN KEY (fkEmpresa) REFERENCES empresa (idEmpresa)
 );
