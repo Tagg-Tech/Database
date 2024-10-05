@@ -17,6 +17,7 @@ CREATE TABLE usuario (
   cargo VARCHAR(45),
   telefone VARCHAR(45),
   cpf CHAR(11),
+  fotoPerfil VARCHAR(100),
   fkEmpresa INT NOT NULL,
   FOREIGN KEY (fkEmpresa) REFERENCES empresa (idEmpresa)
 );
